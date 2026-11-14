@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Админ-панель — AQUACAR</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/fonts.css">
+  <link rel="stylesheet" href="admin.css?v=1.1.0">
+</head>
+<body>
+  <!-- Вход -->
+  <section class="login" data-login hidden>
+    <form class="login__card" data-login-form novalidate>
+      <div class="brand"><span class="brand__mark"></span>AQUACAR <small>админ-панель</small></div>
+      <label class="fld"><span>Логин</span><input name="login" autocomplete="username" required autofocus></label>
+      <label class="fld"><span>Пароль</span><input name="password" type="password" autocomplete="current-password" required></label>
+      <p class="login__error" data-login-error role="alert"></p>
+      <button class="btn btn--primary btn--block" type="submit">Войти</button>
+      <a class="login__back" href="../index.html">← На сайт</a>
+    </form>
+  </section>
+
+  <!-- Панель -->
+  <div class="app" data-app hidden>
+    <aside class="side">
+      <div class="brand"><span class="brand__mark"></span>AQUACAR <small>админ-панель</small></div>
+      <nav class="side__nav" data-nav>
+        <button type="button" data-tab="bookings" class="is-active">Заявки <b class="badge" data-new-count hidden></b></button>
+        <button type="button" data-tab="services">Услуги</button>
+        <button type="button" data-tab="reviews">Отзывы</button>
+        <button type="button" data-tab="contacts">Контакты и главная</button>
+        <button type="button" data-tab="telegram">Запись и Telegram</button>
+        <button type="button" data-tab="security">Безопасность</button>
+      </nav>
+      <div class="side__foot">
+        <a href="../index.html" target="_blank" rel="noopener">Открыть сайт ↗</a>
+        <button type="button" class="link" data-logout>Выйти</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="warn warn--demo" data-demo-warn hidden>
+        <b>Демо-режим.</b> На этом хостинге нет PHP (например, GitHub Pages), поэтому изменения сохраняются
+        только в этом браузере: вы увидите их на сайте, а другие посетители — нет. Заявки и Telegram
+        заработают после переноса на хостинг с PHP — см. INSTALL.txt.
+      </div>
+      <div class="warn" data-default-warn hidden>
+        Вы входите со стандартным паролем <b>admin / admin</b>. Смените его в разделе
+        <button type="button" class="link" data-goto="security">«Безопасность»</button> — иначе в админку сможет зайти кто угодно.
+      </div>
+      <div class="view" data-view></div>
+    </main>
+
+    <div class="savebar" data-savebar hidden>
+      <span>Есть несохранённые изменения</span>
+      <button type="button" class="btn btn--ghost" data-revert>Отменить</button>
+      <button type="button" class="btn btn--primary" data-save>Сохранить на сайте</button>
+    </div>
+  </div>
+
+  <div class="toast" data-toast hidden></div>
+
+  <script src="admin.js?v=1.1.0"></script>
+</body>
+</html>
